@@ -37,7 +37,7 @@ The firmware files (`sinc4ECG.ino`, `sinc4PPG.ino`) must be uploaded to the resp
 Block diagram of the two acquisition units (ECG and PPG) and their connection to the external processing computer:
 
 <p align="center">
-  <img src="./assets/Schema_connessioni.png" width="80%" />
+  <img src="assets/Schema_connessioni.png" width="80%" />
 </p>
 
 Detailed hardware schema, from electrodes/photodiode through the analog front-end to the microcontrollers:
