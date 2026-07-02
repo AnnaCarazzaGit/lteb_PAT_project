@@ -89,37 +89,37 @@ The intended application flow is:
 
 ### App preview
 
-**Nuova misura** — choose the ECG and PPG sensors to connect to:
+**New Measurement** — choose the ECG and PPG sensors to connect to:
 
 <p align="center">
   <img src="./assets/foto2.jpeg" width="70%" />
 </p>
 
-**Calibrazione** — reuse an existing calibration profile or create a new one:
+**Calibration** — reuse an existing calibration profile or create a new one:
 
 <p align="center">
   <img src="./assets/foto3.jpeg" width="70%" />
 </p>
 
-**Misurando...** — real-time PPG signal and current blood pressure / heart rate readings:
+**Measuring...** — real-time PPG signal and current blood pressure / heart rate readings:
 
 <p align="center">
   <img src="./assets/foto5.jpeg" width="70%" />
 </p>
 
-**Seleziona informazioni misura** — browse past measurements by date and time of day:
+**Select Measurement Info** — browse past measurements by date and time of day:
 
 <p align="center">
   <img src="./assets/foto6.jpeg" width="70%" />
 </p>
 
-**Visualizzazione misura singola** — ECG/PPG signals alongside pressure and heart rate statistics:
+**Single Measurement View** — ECG/PPG signals alongside pressure and heart rate statistics:
 
 <p align="center">
   <img src="./assets/foto7.jpeg" width="70%" />
 </p>
 
-**Profilo Utente** — personal data used for calibration (weight, height, etc.):
+**User Profile** — personal data used for calibration (weight, height, etc.):
 
 <p align="center">
   <img src="./assets/foto10.jpeg" width="70%" />
