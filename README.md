@@ -5,7 +5,7 @@ System for estimating **Pulse Arrival Time (PAT)** and blood pressure from **ECG
 Project developed for the Electronics and Biosensors Laboratory course (Politecnico di Milano) — Group 3.
 
 <p align="center">
-  <img src="assets/elenco_laterale.jpeg" width="70%" />
+  <img src="./assets/elenco%20laterale.jpeg" width="70%" />
 </p>
 
 ## Project structure
@@ -37,19 +37,19 @@ The firmware files (`sinc4ECG.ino`, `sinc4PPG.ino`) must be uploaded to the resp
 Block diagram of the two acquisition units (ECG and PPG) and their connection to the external processing computer:
 
 <p align="center">
-  <img src="./assets/Schema_connessioni.png" width="80%" />
+  <img src="./assets/Schema%20connessioni.png" width="80%" />
 </p>
 
 Detailed hardware schema, from electrodes/photodiode through the analog front-end to the microcontrollers:
 
 <p align="center">
-  <img src="./assets/immagine_capitolo_4.png" width="80%" />
+  <img src="./assets/immagine%20capitolo%204.png" width="80%" />
 </p>
 
 Firmware main loop (buffer handling and BLE packet transmission):
 
 <p align="center">
-  <img src="./assets/Diagramma_flusso_PAT_drawio.png" width="70%" />
+  <img src="./assets/Diagramma%20flusso%20PAT.drawio.png" width="70%" />
 </p>
 
 ## Software requirements
