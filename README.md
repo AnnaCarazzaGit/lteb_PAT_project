@@ -37,13 +37,13 @@ The firmware files (`sinc4ECG.ino`, `sinc4PPG.ino`) must be uploaded to the resp
 Block diagram of the two acquisition units (ECG and PPG) and their connection to the external processing computer:
 
 <p align="center">
-  <img src="./assets/Schema%20connessioni.png" width="80%" />
+  <img src="./assets/Schema%20connessioni.png" width="70%" />
 </p>
 
 Detailed hardware schema, from electrodes/photodiode through the analog front-end to the microcontrollers:
 
 <p align="center">
-  <img src="./assets/immagine%20capitolo%204.png" width="80%" />
+  <img src="./assets/immagine%20capitolo%204.png" width="70%" />
 </p>
 
 Firmware main loop (buffer handling and BLE packet transmission):
