@@ -5,7 +5,7 @@ System for estimating **Pulse Arrival Time (PAT)** and blood pressure from **ECG
 Project developed for the Electronics and Biosensors Laboratory course (Politecnico di Milano) — Group 3.
 
 <p align="center">
-  <img src="./assets/app-home.jpeg" width="70%" />
+  <img src="./assets/elenco_laterale.jpeg" width="70%" />
 </p>
 
 ## Project structure
@@ -37,19 +37,19 @@ The firmware files (`sinc4ECG.ino`, `sinc4PPG.ino`) must be uploaded to the resp
 Block diagram of the two acquisition units (ECG and PPG) and their connection to the external processing computer:
 
 <p align="center">
-  <img src="./assets/architecture-block-diagram.png" width="80%" />
+  <img src="./assets/Schema_connessioni.png" width="80%" />
 </p>
 
 Detailed hardware schema, from electrodes/photodiode through the analog front-end to the microcontrollers:
 
 <p align="center">
-  <img src="./assets/architecture-hardware-schema.png" width="80%" />
+  <img src="./assets/immagine_capitolo_4.png" width="80%" />
 </p>
 
 Firmware main loop (buffer handling and BLE packet transmission):
 
 <p align="center">
-  <img src="./assets/firmware-flowchart.png" width="70%" />
+  <img src="./assets/Diagramma_flusso_PAT_drawio.png" width="70%" />
 </p>
 
 ## Software requirements
@@ -89,40 +89,40 @@ The intended application flow is:
 
 ### App preview
 
-**Sensor selection** — choose the ECG and PPG sensors to connect to:
+**Nuova misura** — choose the ECG and PPG sensors to connect to:
 
 <p align="center">
-  <img src="./assets/app-sensor-selection.jpeg" width="70%" />
+  <img src="./assets/foto2.jpeg" width="70%" />
 </p>
 
-**Calibration** — reuse an existing calibration profile or create a new one:
+**Calibrazione** — reuse an existing calibration profile or create a new one:
 
 <p align="center">
-  <img src="./assets/app-calibration.jpeg" width="70%" />
+  <img src="./assets/foto3.jpeg" width="70%" />
 </p>
 
-**Live measurement** — real-time PPG signal and current blood pressure / heart rate readings:
+**Misurando...** — real-time PPG signal and current blood pressure / heart rate readings:
 
 <p align="center">
-  <img src="./assets/app-live-measurement.jpeg" width="70%" />
+  <img src="./assets/foto5.jpeg" width="70%" />
 </p>
 
-**History** — browse past measurements by date and time of day:
+**Seleziona informazioni misura** — browse past measurements by date and time of day:
 
 <p align="center">
-  <img src="./assets/app-history-selection.jpeg" width="70%" />
+  <img src="./assets/foto6.jpeg" width="70%" />
 </p>
 
-**Single measurement view** — ECG/PPG signals alongside pressure and heart rate statistics:
+**Visualizzazione misura singola** — ECG/PPG signals alongside pressure and heart rate statistics:
 
 <p align="center">
-  <img src="./assets/app-single-measurement.jpeg" width="70%" />
+  <img src="./assets/foto7.jpeg" width="70%" />
 </p>
 
-**User profile** — personal data used for calibration (weight, height, etc.):
+**Profilo Utente** — personal data used for calibration (weight, height, etc.):
 
 <p align="center">
-  <img src="./assets/app-user-profile.jpeg" width="70%" />
+  <img src="./assets/foto10.jpeg" width="70%" />
 </p>
 
 ## Report
