@@ -5,7 +5,7 @@ System for estimating **Pulse Arrival Time (PAT)** and blood pressure from **ECG
 Project developed for the Electronics and Biosensors Laboratory course (Politecnico di Milano) — Group 3.
 
 <p align="center">
-  <img src="./assets/elenco_laterale.jpeg" width="70%" />
+  <img src="assets/elenco_laterale.jpeg" width="70%" />
 </p>
 
 ## Project structure
