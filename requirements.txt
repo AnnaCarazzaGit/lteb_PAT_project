@@ -1,0 +1,37 @@
+# Requirements per lteb_PATproject
+# Generato analizzando gli import effettivi di interfaccia.py e programma_background.py
+# Testato con Python 3.10+ (sviluppo su Python 3.12)
+#
+# Installazione:
+#   pip install -r requirements.txt
+
+# --- Interfaccia grafica (Streamlit) ---
+streamlit>=1.35
+streamlit-option-menu>=0.3.13
+streamlit-pills>=0.3.0
+streamlit-autorefresh>=1.0.1
+streamlit-shadcn-ui>=0.1.18
+
+# --- Comunicazione Bluetooth Low Energy con i due Arduino (nRF52840) ---
+bleak>=0.22
+nest-asyncio>=1.6.0
+
+# --- Elaborazione dati e segnali ---
+pandas>=2.2
+numpy>=1.26
+scipy>=1.13
+scikit-learn>=1.5
+
+# --- Visualizzazione ---
+matplotlib>=3.9
+plotly>=5.22
+
+# --- Gestione immagini (foto profilo utente) ---
+Pillow>=10.3
+
+# --- Autenticazione utenti (hash password nel database SQLite) ---
+bcrypt>=4.1
+
+# Nota: i seguenti moduli fanno parte della standard library di Python
+# e NON vanno installati via pip: pickle, os, sqlite3, io, base64, asyncio,
+# subprocess, struct, time, datetime, warnings, signal, sys, queue, csv
