@@ -1,73 +1,73 @@
 # lteb_PATproject
 
-Sistema per la stima del **Pulse Arrival Time (PAT)** e della pressione arteriosa a partire da segnali **ECG** e **PPG** acquisiti in tempo reale da due dispositivi Arduino (nRF52840) via Bluetooth Low Energy, con interfaccia grafica in Streamlit per gestione utenti, calibrazione, acquisizione misure e visualizzazione storico.
+System for estimating **Pulse Arrival Time (PAT)** and blood pressure from **ECG** and **PPG** signals acquired in real time from two Arduino devices (nRF52840) via Bluetooth Low Energy, with a Streamlit graphical interface for user management, calibration, measurement acquisition, and history visualization.
 
-Progetto sviluppato per il corso di Laboratorio di Elettronica e Biosensori (Politecnico di Milano) — Gruppo 3.
+Project developed for the Electronics and Biosensors Laboratory course (Politecnico di Milano) — Group 3.
 
-## Struttura del progetto
+## Project structure
 
 ```
 lteb_PATproject/
-├── interfaccia.py             # App Streamlit: login/registrazione, calibrazione,
-│                               # acquisizione misure, storico, visualizzazione grafici
-├── programma_background.py    # Script di supporto: connessione BLE, acquisizione e
-│                               # pre-processing dei segnali ECG/PPG (scipy/numpy)
-├── sinc4ECG.ino                # Firmware Arduino (nRF52840) per il modulo ECG (AD8232)
-├── sinc4PPG.ino                # Firmware Arduino (nRF52840) per il modulo PPG (MAX3010x)
-├── requirements.txt            # Dipendenze Python
-├── Report/                     # Relazione di progetto (PDF + sorgenti LaTeX e immagini)
-└── users.db                    # Database SQLite (creato/aggiornato automaticamente al primo avvio)
+├── interfaccia.py             # Streamlit app: login/registration, calibration,
+│                               # measurement acquisition, history, chart visualization
+├── programma_background.py    # Support script: BLE connection, acquisition and
+│                               # pre-processing of ECG/PPG signals (scipy/numpy)
+├── sinc4ECG.ino                # Arduino firmware (nRF52840) for the ECG module (AD8232)
+├── sinc4PPG.ino                # Arduino firmware (nRF52840) for the PPG module (MAX3010x)
+├── requirements.txt            # Python dependencies
+├── Report/                     # Project report (PDF + LaTeX sources and images)
+└── users.db                    # SQLite database (created/updated automatically on first run)
 ```
 
 ## Hardware
 
-- 2x scheda Arduino nRF52840 (comunicazione BLE tramite UART service, libreria `bluefruit`)
-- Modulo ECG basato su AD8232, campionamento a 512 Hz
-- Modulo PPG basato su SparkFun Bio Sensor Hub (MAX3010x), campionamento a 256 Hz
-- RTC SparkFun RV8803 su entrambi i moduli per il sincronismo temporale
+- 2x Arduino nRF52840 boards (BLE communication via UART service, `bluefruit` library)
+- ECG module based on AD8232, sampling at 512 Hz
+- PPG module based on SparkFun Bio Sensor Hub (MAX3010x), sampling at 256 Hz
+- SparkFun RV8803 RTC on both modules for time synchronization
 
-I firmware (`sinc4ECG.ino`, `sinc4PPG.ino`) vanno caricati sulle rispettive schede tramite Arduino IDE, con le librerie `Adafruit_nRF52 (bluefruit)`, `SparkFun_RV8803` e `SparkFun_Bio_Sensor_Hub_Library` installate.
+The firmware files (`sinc4ECG.ino`, `sinc4PPG.ino`) must be uploaded to the respective boards via the Arduino IDE, with the `Adafruit_nRF52 (bluefruit)`, `SparkFun_RV8803`, and `SparkFun_Bio_Sensor_Hub_Library` libraries installed.
 
-## Software — requisiti
+## Software requirements
 
-- Python 3.10 o superiore (sviluppato e testato con Python 3.12)
-- Le dipendenze Python sono elencate in `requirements.txt`
+- Python 3.10 or higher (developed and tested with Python 3.12)
+- Python dependencies are listed in `requirements.txt`
 
-### Installazione
+### Installation
 
-Si consiglia di lavorare in un virtual environment dedicato:
+We recommend working in a dedicated virtual environment:
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate      # su Windows: venv\Scripts\activate
+source venv/bin/activate      # on Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
 ```
 
-> **Nota Bluetooth:** la libreria `bleak` richiede il Bluetooth attivo sul computer. Su Windows non serve configurazione aggiuntiva; su macOS assicurarsi di aver concesso i permessi Bluetooth al terminale/IDE; su Linux è generalmente richiesto BlueZ installato.
+> **Bluetooth note:** the `bleak` library requires Bluetooth to be enabled on the computer. No additional configuration is needed on Windows; on macOS make sure Bluetooth permissions have been granted to the terminal/IDE; on Linux, BlueZ is generally required.
 
-## Avvio dell'interfaccia
+## Running the interface
 
-Con il virtual environment attivo, dalla cartella del progetto:
+With the virtual environment active, from the project folder run:
 
 ```bash
 streamlit run interfaccia.py
 ```
 
-L'applicazione si apre automaticamente nel browser (di default su `http://localhost:8501`). Al primo avvio viene creato in automatico il file `users.db` con lo schema necessario (utenti, dispositivi, calibrazioni, misure, campioni).
+The application opens automatically in the browser (by default at `http://localhost:8501`). On first launch, the `users.db` file is created automatically with the required schema (users, devices, calibrations, measurements, samples).
 
-Il flusso applicativo previsto è:
-1. Registrazione / login utente
-2. Scelta o esecuzione di una calibrazione
-3. Accensione e connessione BLE dei due dispositivi (ECG e PPG)
-4. Acquisizione di una nuova misura in tempo reale
-5. Salvataggio della misura con relativi metadati (data, periodo della giornata) e consultazione nello storico
+The intended application flow is:
+1. User registration / login
+2. Selecting or performing a calibration
+3. Powering on and establishing BLE connection with the two devices (ECG and PPG)
+4. Acquiring a new real-time measurement
+5. Saving the measurement with its metadata (date, time of day) and reviewing it in the history
 
 ## Report
 
-La relazione completa di progetto (metodologia, schemi elettrici, elaborazione del segnale, risultati) si trova in `Report/Gruppo_3_Laboratorio_di_Elettronica_e_Biosensori.pdf`, con i sorgenti LaTeX nella cartella omonima.
+The complete project report (methodology, circuit diagrams, signal processing, results) is available in `Report/Gruppo_3_Laboratorio_di_Elettronica_e_Biosensori.pdf`, with LaTeX sources in the folder of the same name.
 
-## Note
+## Notes
 
-- `requirements.txt` è stato ricostruito a partire dagli import effettivamente presenti nel codice (`interfaccia.py`, `programma_background.py`), poiché non era stato generato in fase di sviluppo. Verificare le versioni installate con `pip freeze > requirements-lock.txt` se si vuole congelare l'ambiente esatto usato per i test.
-- Il file `users.db` contiene dati personali degli utenti (inclusa password hashata con bcrypt) ed è correttamente escluso dal repository — vedi `.gitignore`.
+- `requirements.txt` was reconstructed from the imports actually present in the code (`interfaccia.py`, `programma_background.py`), since it had not been generated during development. Check the installed versions with `pip freeze > requirements-lock.txt` if you want to freeze the exact environment used for testing.
+- The `users.db` file contains personal user data (including bcrypt-hashed passwords) and is correctly excluded from the repository — see `.gitignore`.
